@@ -1,0 +1,20 @@
+{
+  "name": "workflower",
+  "version": "1.0.0",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "git://github.com/angular/bower-angular.git#~1.2.9",
+    "angular-bootstrap": "~0.10.0",
+    "angular-animate": "~1.2.9",
+    "angular-route": "~1.2.9",
+    "bootstrap": "~3.0.3",
+    "angular-ui-select2": "~0.0.5",
+    "angular-local-storage": "*"
+  }
+}

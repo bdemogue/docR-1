@@ -1,0 +1,44 @@
+@import "compass";
+
+*{@include box-sizing(border-box);}
+
+h1{ margin: 0; }
+
+input, textarea{border:none; -webkit-appearance: none; @include border-radius(0px);}
+
+body{
+	font-family: "Ubuntu";
+	font-size: 16px;
+	color: #333;
+	background: #FFF;
+
+}
+/* ---------- NAV STYLES ---------*/
+
+.brand-color{color:#1ABC9C !important; font-weight: bold;}
+
+/* -----------END NAV STYLES -----*/
+
+/* --------- DOC STYLES  ---------*/
+
+.doc-container{
+
+}
+.doc-header{
+	font-weight: bold;
+	font-size: 18px;
+}
+
+.doc {
+	background: #1ABC9C;
+	color:#fff;
+	margin:15px;
+	@include border-radius(5px);
+	border:1px solid darken(#1ABC9C,5);
+	text-align: center;
+	cursor: pointer;
+	padding: 15px;
+}
+
+
+/* --------- END DOC STYLES  ----*/
