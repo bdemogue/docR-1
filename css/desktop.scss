@@ -9,21 +9,32 @@ input, textarea{border:none; -webkit-appearance: none; -moz-appearance: none; @i
 body{
 	font-family: "Ubuntu";
 	font-size: 16px;
-	color: #333;
-	background: #FFF;
+	color: #FFF;
+	background: #035D99;
 
 }
 
 /* ---------- NAV STYLES ---------*/
 
 	//FireFox fix for navbar
-	@media screen and (max-width: 768px){
+	@media screen and (max-width : 768px){
 		.navbar-form{
 		clear: both;
 		}
 	}
 	
 .brand-color{color:#1ABC9C !important; font-weight: bold;}
+
+//menu items
+
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.active>a:hover{
+	color: #FFF;
+	background-color: #035D99;
+}
+
+// Badge
+.badge{line-height: 1.2; margin-left: 5px; background: #FFF; color: #333;}
 
 /* -----------END NAV STYLES -----*/
 
@@ -39,11 +50,11 @@ body{
 	color:#fff;
 	margin:15px;
 	@include border-radius(5px);
-	border:1px solid darken(#1ABC9C,5);
+	border:1px solid darken(#1ABC9C,10);
 	text-align: center;
 	cursor: pointer;
 	padding: 15px;
-	min-height: 90px;
+	height: 90px;
 }
 
 .doc-actions{

@@ -26,8 +26,8 @@ input, textarea {
 body {
   font-family: "Ubuntu";
   font-size: 16px;
-  color: #333;
-  background: #FFF;
+  color: #FFF;
+  background: #035D99;
 }
 
 /* ---------- NAV STYLES ---------*/
@@ -43,9 +43,24 @@ body {
   font-weight: bold;
 }
 
+/* line 31, desktop.scss */
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover {
+  color: #FFF;
+  background-color: #035D99;
+}
+
+/* line 37, desktop.scss */
+.badge {
+  line-height: 1.2;
+  margin-left: 5px;
+  background: #FFF;
+  color: #333;
+}
+
 /* -----------END NAV STYLES -----*/
 /* --------- DOC STYLES  ---------*/
-/* line 36, desktop.scss */
+/* line 47, desktop.scss */
 .doc {
   position: relative;
   background: #1ABC9C;
@@ -56,29 +71,29 @@ body {
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
   border-radius: 5px;
-  border: 1px solid #17a689;
+  border: 1px solid #148f77;
   text-align: center;
   cursor: pointer;
   padding: 15px;
-  min-height: 90px;
+  height: 90px;
 }
 
-/* line 49, desktop.scss */
+/* line 60, desktop.scss */
 .doc-actions {
   position: absolute;
   display: block;
 }
-/* line 53, desktop.scss */
+/* line 64, desktop.scss */
 .doc-actions.left {
   left: 10px;
   top: 7px;
 }
-/* line 57, desktop.scss */
+/* line 68, desktop.scss */
 .doc-actions.right {
   right: 10px;
   top: 5px;
 }
-/* line 61, desktop.scss */
+/* line 72, desktop.scss */
 .doc-actions span {
   display: inline-block;
   height: 30px;
@@ -86,7 +101,7 @@ body {
   font-size: 26px;
 }
 
-/* line 71, desktop.scss */
+/* line 82, desktop.scss */
 .doc-header {
   font-weight: bold;
   font-size: 18px;

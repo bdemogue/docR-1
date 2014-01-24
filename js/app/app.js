@@ -18,7 +18,7 @@ docRApp.config(["$routeProvider", "$locationProvider",'localStorageServiceProvid
 }]);
 
 docRApp.controller('NavController',['$scope','$location','userDocsService', function($scope, $location, userDocsService){
-
+	$scope.docs = userDocsService.getAllDocs();
 	//collapse
 	$scope.isCollapsed = true;
 
@@ -65,6 +65,15 @@ docRApp.factory('userDocsService', ['localStorageService', function(localStorage
 				{ 'cat' : 'Bower', 'desc' : 'installation, gestion des packages' },
 				{ 'cat' : 'Grunt', 'desc' : 'installation, uglify + minification'},
 				{ 'cat' : 'Photo', 'desc' : 'Canon7D, Cadrage / Décadrage'},
+				{ 'cat' : 'Angularjs', 'desc' : 'Services / factory' },
+				{ 'cat' : 'CakePHP', 'desc' : 'Specs 3.0' },
+				{ 'cat' : 'Compass', 'desc' : 'Mixins' },
+				{ 'cat' : 'Github', 'desc' : 'Config git'},
+				{ 'cat' : 'Windows 7', 'desc' : 'Lignes de commandes utiles'},
+				{ 'cat' : 'Sublime Text 2', 'desc' : 'Snippets php' },
+				{ 'cat' : 'Laravel', 'desc' : 'IOC' },
+				{ 'cat' : 'Node.js', 'desc' : 'installation, npm' },
+				{ 'cat' : 'Html5', 'desc' : 'Boilerplate de base'}
 				];
 				localStorageService.set('docs', docs);
 			}
