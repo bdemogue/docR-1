@@ -14,6 +14,7 @@ h1 {
 input, textarea {
   border: none;
   -webkit-appearance: none;
+  -moz-appearance: none;
   -webkit-border-radius: 0px;
   -moz-border-radius: 0px;
   -ms-border-radius: 0px;
@@ -30,7 +31,13 @@ body {
 }
 
 /* ---------- NAV STYLES ---------*/
-/* line 18, desktop.scss */
+@media screen and (max-width: 768px) {
+  /* line 21, desktop.scss */
+  .navbar-form {
+    clear: both;
+  }
+}
+/* line 26, desktop.scss */
 .brand-color {
   color: #1ABC9C !important;
   font-weight: bold;
@@ -38,7 +45,7 @@ body {
 
 /* -----------END NAV STYLES -----*/
 /* --------- DOC STYLES  ---------*/
-/* line 28, desktop.scss */
+/* line 36, desktop.scss */
 .doc {
   position: relative;
   background: #1ABC9C;
@@ -56,22 +63,22 @@ body {
   min-height: 90px;
 }
 
-/* line 41, desktop.scss */
+/* line 49, desktop.scss */
 .doc-actions {
   position: absolute;
   display: block;
 }
-/* line 45, desktop.scss */
+/* line 53, desktop.scss */
 .doc-actions.left {
   left: 10px;
   top: 7px;
 }
-/* line 49, desktop.scss */
+/* line 57, desktop.scss */
 .doc-actions.right {
   right: 10px;
   top: 5px;
 }
-/* line 53, desktop.scss */
+/* line 61, desktop.scss */
 .doc-actions span {
   display: inline-block;
   height: 30px;
@@ -79,7 +86,7 @@ body {
   font-size: 26px;
 }
 
-/* line 63, desktop.scss */
+/* line 71, desktop.scss */
 .doc-header {
   font-weight: bold;
   font-size: 18px;

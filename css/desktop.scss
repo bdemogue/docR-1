@@ -4,7 +4,7 @@
 
 h1{ margin: 0; }
 
-input, textarea{border:none; -webkit-appearance: none; @include border-radius(0px);}
+input, textarea{border:none; -webkit-appearance: none; -moz-appearance: none; @include border-radius(0px);}
 
 body{
 	font-family: "Ubuntu";
@@ -13,8 +13,16 @@ body{
 	background: #FFF;
 
 }
+
 /* ---------- NAV STYLES ---------*/
 
+	//FireFox fix for navbar
+	@media screen and (max-width: 768px){
+		.navbar-form{
+		clear: both;
+		}
+	}
+	
 .brand-color{color:#1ABC9C !important; font-weight: bold;}
 
 /* -----------END NAV STYLES -----*/

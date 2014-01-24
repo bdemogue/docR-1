@@ -63,7 +63,8 @@ docRApp.factory('userDocsService', ['localStorageService', function(localStorage
 				{ 'cat' : 'Angularjs', 'desc' : 'doc sur angularjs' },
 				{ 'cat' : 'Laravel', 'desc' : 'doc sur laravel' },
 				{ 'cat' : 'Bower', 'desc' : 'installation, gestion des packages' },
-				{ 'cat' : 'Grunt', 'desc' : 'installation, uglify + minification'}
+				{ 'cat' : 'Grunt', 'desc' : 'installation, uglify + minification'},
+				{ 'cat' : 'Photo', 'desc' : 'Canon7D, Cadrage / Décadrage'},
 				];
 				localStorageService.set('docs', docs);
 			}
