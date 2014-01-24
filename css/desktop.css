@@ -38,14 +38,9 @@ body {
 
 /* -----------END NAV STYLES -----*/
 /* --------- DOC STYLES  ---------*/
-/* line 27, desktop.scss */
-.doc-header {
-  font-weight: bold;
-  font-size: 18px;
-}
-
-/* line 32, desktop.scss */
+/* line 28, desktop.scss */
 .doc {
+  position: relative;
   background: #1ABC9C;
   color: #fff;
   margin: 15px;
@@ -58,6 +53,35 @@ body {
   text-align: center;
   cursor: pointer;
   padding: 15px;
+}
+
+/* line 40, desktop.scss */
+.doc-actions {
+  position: absolute;
+  display: block;
+}
+/* line 44, desktop.scss */
+.doc-actions.left {
+  left: 10px;
+  top: 7px;
+}
+/* line 48, desktop.scss */
+.doc-actions.right {
+  right: 10px;
+  top: 5px;
+}
+/* line 52, desktop.scss */
+.doc-actions span {
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+  font-size: 26px;
+}
+
+/* line 62, desktop.scss */
+.doc-header {
+  font-weight: bold;
+  font-size: 18px;
 }
 
 /* --------- END DOC STYLES  ----*/
