@@ -53,24 +53,25 @@ body {
   text-align: center;
   cursor: pointer;
   padding: 15px;
+  min-height: 90px;
 }
 
-/* line 40, desktop.scss */
+/* line 41, desktop.scss */
 .doc-actions {
   position: absolute;
   display: block;
 }
-/* line 44, desktop.scss */
+/* line 45, desktop.scss */
 .doc-actions.left {
   left: 10px;
   top: 7px;
 }
-/* line 48, desktop.scss */
+/* line 49, desktop.scss */
 .doc-actions.right {
   right: 10px;
   top: 5px;
 }
-/* line 52, desktop.scss */
+/* line 53, desktop.scss */
 .doc-actions span {
   display: inline-block;
   height: 30px;
@@ -78,7 +79,7 @@ body {
   font-size: 26px;
 }
 
-/* line 62, desktop.scss */
+/* line 63, desktop.scss */
 .doc-header {
   font-weight: bold;
   font-size: 18px;
