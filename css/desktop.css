@@ -32,35 +32,45 @@ body {
 
 /* ---------- NAV STYLES ---------*/
 @media screen and (max-width: 768px) {
-  /* line 21, desktop.scss */
+  /* line 22, desktop.scss */
   .navbar-form {
     clear: both;
   }
 
-  /* line 24, desktop.scss */
+  /* line 25, desktop.scss */
   .navbar-defaut .navbar-nav > li > a {
     content: '';
   }
 }
-/* line 29, desktop.scss */
+/* line 31, desktop.scss */
+header {
+  position: fixed;
+  overflow: hidden;
+  z-index: 2;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+
+/* line 38, desktop.scss */
 .navbar-brand {
   font-size: 22px;
 }
 
-/* line 30, desktop.scss */
+/* line 39, desktop.scss */
 .brand-color {
   color: #1ABC9C !important;
   font-weight: bold;
 }
 
-/* line 35, desktop.scss */
+/* line 44, desktop.scss */
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover {
   color: #FFF;
   background-color: #035D99;
 }
 
-/* line 41, desktop.scss */
+/* line 50, desktop.scss */
 .badge {
   line-height: 1.2;
   margin-left: 5px;
@@ -69,8 +79,24 @@ body {
 }
 
 /* -----------END NAV STYLES -----*/
+/* ----------- CONTAINER ---------*/
+@media screen and (max-width: 768px) {
+  /* line 56, desktop.scss */
+  .container {
+    z-index: 1;
+    margin-top: 140px;
+  }
+}
+@media screen and (min-width: 768px) {
+  /* line 63, desktop.scss */
+  .container {
+    z-index: 1000;
+    margin-top: 70px;
+  }
+}
+/* ------------ END CONTAINER ----*/
 /* --------- DOC STYLES  ---------*/
-/* line 51, desktop.scss */
+/* line 77, desktop.scss */
 .doc {
   position: relative;
   background: #1ABC9C;
@@ -88,22 +114,22 @@ body {
   height: 90px;
 }
 
-/* line 64, desktop.scss */
+/* line 90, desktop.scss */
 .doc-actions {
   position: absolute;
   display: block;
 }
-/* line 68, desktop.scss */
+/* line 94, desktop.scss */
 .doc-actions.left {
   left: 10px;
   top: 7px;
 }
-/* line 72, desktop.scss */
+/* line 98, desktop.scss */
 .doc-actions.right {
   right: 10px;
   top: 5px;
 }
-/* line 76, desktop.scss */
+/* line 102, desktop.scss */
 .doc-actions span {
   display: inline-block;
   height: 30px;
@@ -111,7 +137,7 @@ body {
   font-size: 26px;
 }
 
-/* line 86, desktop.scss */
+/* line 112, desktop.scss */
 .doc-header {
   font-weight: bold;
   font-size: 18px;

@@ -12,7 +12,7 @@
 				<span class="glyphicon glyphicon-pencil edit"></span>
 			</div>
 			<div class="doc-actions right">
-				<span class="glyphicon glyphicon-remove delete"></span>
+				<span ng-click="remove(doc, $index)" class="glyphicon glyphicon-remove delete"></span>
 			</div>
 			<div class="doc-header">
 				<span>{{ doc.cat }}</span>

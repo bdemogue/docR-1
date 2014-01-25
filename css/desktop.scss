@@ -16,15 +16,24 @@ body{
 
 /* ---------- NAV STYLES ---------*/
 
-	//FireFox fix for navbar
+	
 	@media screen and (max-width : 768px){
+		//FireFox fix for navbar
 		.navbar-form{
 		clear: both;
 		}
 		.navbar-defaut .navbar-nav>li>a{
 			content:'';
 		}
+
 	}
+
+header{
+	position: fixed;
+	overflow: hidden;
+	z-index:2;
+	left: 0; right: 0; top: 0;
+}
 
 .navbar-brand{font-size: 22px;}
 .brand-color{color:#1ABC9C !important; font-weight: bold;}
@@ -41,6 +50,23 @@ body{
 .badge{line-height: 1.2; margin-left: 5px; background: #FFF; color: #333;}
 
 /* -----------END NAV STYLES -----*/
+
+/* ----------- CONTAINER ---------*/
+@media screen and (max-width : 768px){
+	.container{
+		z-index:1;
+		margin-top: 140px;
+	}
+}
+
+@media screen and (min-width: 768px){
+	.container{
+		z-index:1000;
+		margin-top: 70px;
+	}
+}
+
+/* ------------ END CONTAINER ----*/
 
 /* --------- DOC STYLES  ---------*/
 

@@ -1,14 +1,21 @@
 <h1>Ajouter une doc</h1>
-<div class="col-md-12" ng-controller="AddDocController">
-	<div class="form-group">
-		<label for="category">Catégorie</label>
-		<input type="text" ui-select2="select2Options" ng-model="categories">
-		</select>
-	</div>
-</div>
-<div class="col-md-6">
-	<div class="form-group">
-		<label for="exampleInputEmail1">Date de création</label>
-		<input type="email" class="form-control" id="datepicker" placeholder="date de création">
+
+<div class="row">
+	<div class="col-md-12" ng-controller="AddDocCtrl">
+		<div class="form-group">
+			<label for="title">Titre</label>
+			<input type="text" class="form-control" ng-model="doc.title">
+			</select>
+		</div>
+		<div class="form-group">
+			<label for="description">Description</label>
+			<textarea class="form-control" ng-model="doc.desc"> </textarea>
+			</select>
+		</div>
+		<div class="form-group">
+			<label for="tags">Tags</label>
+			<input type="text" ui-select2="select2Options" ng-model="doc.tags">
+			</select>
+		</div>
 	</div>
 </div>
