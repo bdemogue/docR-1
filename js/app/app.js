@@ -22,6 +22,12 @@ docRApp.controller('NavController',['$scope','$location','userDocsService', func
 	//collapse
 	$scope.isCollapsed = true;
 
+	//active menu
+	$scope.isActive = function(viewLocation){
+		console.log($location.path());
+		return viewLocation === $location.path();
+	};
+
 
 }]);
 

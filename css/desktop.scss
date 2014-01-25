@@ -10,7 +10,7 @@ body{
 	font-family: "Ubuntu";
 	font-size: 16px;
 	color: #FFF;
-	background: #035D99;
+	background: #0E212E;
 
 }
 
@@ -21,8 +21,12 @@ body{
 		.navbar-form{
 		clear: both;
 		}
+		.navbar-defaut .navbar-nav>li>a{
+			content:'';
+		}
 	}
-	
+
+.navbar-brand{font-size: 22px;}
 .brand-color{color:#1ABC9C !important; font-weight: bold;}
 
 //menu items
