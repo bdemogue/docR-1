@@ -1,18 +1,22 @@
-var docRApp = angular.module('docR', ['ngRoute', 'ui.bootstrap', 'ui.select2', 'LocalStorageModule', 'mongolabResource']);
+var docRApp = angular.module('docR', ['ngRoute', 'ui.bootstrap', 'ui.select2', 'LocalStorageModule', 'mongolabResourceHttp']);
 
-docRApp.constant('API_KEY', 'RaaG5FZIUwKBa3Men9gHm9oM9Siv1Vi8');
-docRApp.constant('DB_NAME', 'docr');
+docRApp.constant('MONGOLAB_CONFIG',{API_KEY:'RaaG5FZIUwKBa3Men9gHm9oM9Siv1Vi8', DB_NAME:'docr'});
 
 docRApp.config(["$routeProvider", "$locationProvider",'localStorageServiceProvider', function($routeProvider, $locationProvider, localStorageServiceProvider) {
 
 	$routeProvider
 		.when('/docs', {
 			templateUrl: 'partials/view.html',
-			controller : 'DocsController'
+			controller : 'DocsCtrl',
+			resolve : {
+				docs: ['Doc' , function(Doc){
+					return Doc.all();
+				}
+			]}
 		})
 		.when('/add', {
 			templateUrl: 'partials/add.html',
-			controller : 'AddDocController'
+			controller : 'AddDocCtrl'
 		})
 		.otherwise({ redirectTo: '/docs' });
 
@@ -21,8 +25,7 @@ docRApp.config(["$routeProvider", "$locationProvider",'localStorageServiceProvid
 }]);
 
 
-docRApp.controller('NavController',['$scope','$location','userDocsService', function($scope, $location, userDocsService){
-	$scope.docs = userDocsService.getAllDocs();
+docRApp.controller('NavCtrl',['$scope','$location','userDocsService', function($scope, $location, userDocsService){
 	//collapse
 	$scope.isCollapsed = true;
 
@@ -35,16 +38,27 @@ docRApp.controller('NavController',['$scope','$location','userDocsService', func
 
 }]);
 
-docRApp.controller('DocsController',['$scope','$location','$http','userDocsService', function($scope, $location, $http, userDocsService){
+docRApp.controller('DocsCtrl',['$scope','$location','$http','userDocsService', 'docs', function($scope, $location, $http, userDocsService, docs){
+	
+	$scope.docs = docs;
+	console.log($scope.docs);
 
-	//retrive docs
-	$scope.isDeleted = userDocsService.delDocs();
-	$scope.docs = userDocsService.getAllDocs();
+	$scope.remove = function(doc, index){
+		console.log(index);
+		doc.$remove(function(){
 
+			$scope.docs.splice(index, 1);
+			$location.path('/docs');
+
+		}, function(){
+			throw new Error("Sth went wrong...");
+		})
+	}
+	
 }]);
 
 
-docRApp.controller('AddDocController',['$scope','$location','$http', function($scope, $location, $http){
+docRApp.controller('AddDocCtrl',['$scope','$location','$http', function($scope, $location, $http){
 
 	//select2 options
 	 $scope.categories = [
@@ -61,8 +75,8 @@ docRApp.controller('AddDocController',['$scope','$location','$http', function($s
 
 //Set mongolab ressource
 
-docRApp.factory('Doc', function ($mongolabResource) {
-  return $mongolabResource('docs');
+docRApp.factory('Doc', function ($mongolabResourceHttp) {
+  return $mongolabResourceHttp('docs');
 });
 
 
@@ -75,11 +89,17 @@ docRApp.factory('userDocsService', ['localStorageService','Doc', function(localS
 
 			if(docs==null){
 				
-				docs = Doc.query();
-				localStorageService.set('docs', docs);
+				docs = Doc.all(function(dbDocs){
+					localStorageService.set('docs', dbDocs);
+					return docs;
+				});
+		
+				
 			}
-
-			return docs;
+			else{
+				return docs;
+			}
+			
 
 		},
 		getAllDocs: function() {

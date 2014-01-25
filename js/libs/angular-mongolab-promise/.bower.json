@@ -1,0 +1,14 @@
+{
+  "name": "angular-mongolab-promise",
+  "homepage": "https://github.com/pkozlowski-opensource/angularjs-mongolab-promise",
+  "_release": "d4a4f3a55f",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "d4a4f3a55fd645e4ed9ef290d5d33f6c252efc35"
+  },
+  "_source": "https://github.com/pkozlowski-opensource/angularjs-mongolab-promise.git",
+  "_target": "*",
+  "_originalSource": "https://github.com/pkozlowski-opensource/angularjs-mongolab-promise.git",
+  "_direct": true
+}

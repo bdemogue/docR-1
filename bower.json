@@ -16,7 +16,7 @@
     "bootstrap": "~3.0.3",
     "angular-ui-select2": "~0.0.5",
     "angular-local-storage": "*",
-    "angularjs-mongolab": "*",
-    "angular-resource": "~1.2.10"
+    "angular-resource": "~1.2.10",
+    "angular-mongolab-promise": "https://github.com/pkozlowski-opensource/angularjs-mongolab-promise.git"
   }
 }
