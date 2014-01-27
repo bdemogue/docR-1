@@ -26,23 +26,51 @@ input, textarea {
 body {
   font-family: "Ubuntu";
   font-size: 16px;
-  color: #FFF;
-  background: #0D3D58;
+  color: #333;
+  background: #FFF;
+}
+
+/* line 17, desktop.scss */
+.row {
+  margin: 0;
 }
 
 /* ---------- NAV STYLES ---------*/
 @media screen and (max-width: 768px) {
-  /* line 22, desktop.scss */
-  .navbar-form {
+  /* line 26, desktop.scss */
+  .navbar-form.filter {
     clear: both;
+    position: fixed;
+    z-index: 90;
+    right: 17px;
+    top: -10px;
+    left: 100px;
   }
 
-  /* line 25, desktop.scss */
+  /* line 35, desktop.scss */
   .navbar-defaut .navbar-nav > li > a {
     content: '';
   }
+
+  /* line 39, desktop.scss */
+  .navbar-default .navbar-toggle {
+    margin-right: 0;
+    border: 0 none;
+    float: left;
+    margin-top: 10px;
+    padding: 10px 0;
+  }
+  /* line 46, desktop.scss */
+  .navbar-default .navbar-toggle .icon-bar {
+    background-color: #8D8D8D;
+  }
+
+  /* line 52, desktop.scss */
+  .navbar-brand {
+    padding: 15px 5px;
+  }
 }
-/* line 31, desktop.scss */
+/* line 59, desktop.scss */
 header {
   position: fixed;
   overflow: hidden;
@@ -52,25 +80,25 @@ header {
   top: 0;
 }
 
-/* line 38, desktop.scss */
+/* line 66, desktop.scss */
 .navbar-brand {
   font-size: 22px;
 }
 
-/* line 39, desktop.scss */
+/* line 67, desktop.scss */
 .brand-color {
   color: #1ABC9C !important;
   font-weight: bold;
 }
 
-/* line 44, desktop.scss */
+/* line 72, desktop.scss */
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover {
   color: #FFF;
   background-color: #035D99;
 }
 
-/* line 50, desktop.scss */
+/* line 79, desktop.scss */
 .badge {
   line-height: 1.2;
   margin-left: 5px;
@@ -81,14 +109,14 @@ header {
 /* -----------END NAV STYLES -----*/
 /* ----------- CONTAINER ---------*/
 @media screen and (max-width: 768px) {
-  /* line 56, desktop.scss */
+  /* line 86, desktop.scss */
   .container {
     z-index: 1;
-    margin-top: 140px;
+    margin-top: 70px;
   }
 }
 @media screen and (min-width: 768px) {
-  /* line 63, desktop.scss */
+  /* line 93, desktop.scss */
   .container {
     z-index: 1000;
     margin-top: 70px;
@@ -96,7 +124,13 @@ header {
 }
 /* ------------ END CONTAINER ----*/
 /* --------- DOC STYLES  ---------*/
-/* line 77, desktop.scss */
+@media screen and (max-width: 768px) {
+  /* line 105, desktop.scss */
+  .doc {
+    height: inherit;
+  }
+}
+/* line 115, desktop.scss */
 .doc {
   position: relative;
   background: #1ABC9C;
@@ -114,22 +148,22 @@ header {
   height: 90px;
 }
 
-/* line 90, desktop.scss */
+/* line 128, desktop.scss */
 .doc-actions {
   position: absolute;
   display: block;
 }
-/* line 94, desktop.scss */
+/* line 132, desktop.scss */
 .doc-actions.left {
   left: 10px;
   top: 7px;
 }
-/* line 98, desktop.scss */
+/* line 136, desktop.scss */
 .doc-actions.right {
   right: 10px;
   top: 5px;
 }
-/* line 102, desktop.scss */
+/* line 140, desktop.scss */
 .doc-actions span {
   display: inline-block;
   height: 30px;
@@ -137,7 +171,7 @@ header {
   font-size: 26px;
 }
 
-/* line 112, desktop.scss */
+/* line 150, desktop.scss */
 .doc-header {
   font-weight: bold;
   font-size: 18px;

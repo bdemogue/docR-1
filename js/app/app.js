@@ -9,10 +9,11 @@ docRApp.config(["$routeProvider", "$locationProvider",'localStorageServiceProvid
 			templateUrl: 'partials/view.html',
 			controller : 'DocsCtrl',
 			resolve : {
-				docs: ['Doc' , function(Doc){
-					return Doc.all();
-				}
-			]}
+
+				docs : ['Doc', function(Doc){
+				 	return Doc.all();
+				}]
+			}
 		})
 		.when('/add', {
 			templateUrl: 'partials/add.html',
@@ -31,7 +32,6 @@ docRApp.controller('NavCtrl',['$scope','$location','userDocsService', function($
 
 	//active menu
 	$scope.isActive = function(viewLocation){
-		console.log($location.path());
 		return viewLocation === $location.path();
 	};
 
@@ -44,7 +44,6 @@ docRApp.controller('DocsCtrl',['$scope','$location','$http','userDocsService', '
 	console.log($scope.docs);
 
 	$scope.remove = function(doc, index){
-		console.log(index);
 		doc.$remove(function(){
 
 			$scope.docs.splice(index, 1);
@@ -84,23 +83,9 @@ docRApp.factory('userDocsService', ['localStorageService','Doc', function(localS
 
 	return {
 
-		setDocs : function() {
-			var docs = localStorageService.get('docs');
-
-			if(docs==null){
-				
-				docs = Doc.all(function(dbDocs){
-					localStorageService.set('docs', dbDocs);
-					return docs;
-				});
-		
-				
-			}
-			else{
-				return docs;
-			}
+		setDocs : function(Doc) {
 			
-
+			return localStorageService.set('docs',Doc);
 		},
 		getAllDocs: function() {
 			return this.setDocs();

@@ -9,9 +9,13 @@ input, textarea{border:none; -webkit-appearance: none; -moz-appearance: none; @i
 body{
 	font-family: "Ubuntu";
 	font-size: 16px;
-	color: #FFF;
-	background: #0D3D58;
+	color: #333;
+	background: #FFF;
 
+}
+
+.row{
+	margin:0;
 }
 
 /* ---------- NAV STYLES ---------*/
@@ -19,12 +23,36 @@ body{
 	
 	@media screen and (max-width : 768px){
 		//FireFox fix for navbar
-		.navbar-form{
-		clear: both;
+		.navbar-form.filter{
+			clear: both;
+			position:fixed;
+			z-index:90;
+			right: 17px;
+			top: -10px;
+			left: 100px;
+	
 		}
 		.navbar-defaut .navbar-nav>li>a{
 			content:'';
 		}
+		.navbar-default{
+			.navbar-toggle{
+				margin-right: 0;
+				border: 0 none;
+				float: left;
+				margin-top: 10px;
+				padding: 10px 0;
+
+				.icon-bar{
+					background-color: #8D8D8D;
+				}
+			}	
+		}
+
+		.navbar-brand{
+			padding: 15px 5px;
+		}
+		
 
 	}
 
@@ -46,16 +74,18 @@ header{
 	background-color: #035D99;
 }
 
+
 // Badge
 .badge{line-height: 1.2; margin-left: 5px; background: #FFF; color: #333;}
 
 /* -----------END NAV STYLES -----*/
 
+
 /* ----------- CONTAINER ---------*/
 @media screen and (max-width : 768px){
 	.container{
 		z-index:1;
-		margin-top: 140px;
+		margin-top: 70px;
 	}
 }
 
@@ -69,6 +99,14 @@ header{
 /* ------------ END CONTAINER ----*/
 
 /* --------- DOC STYLES  ---------*/
+
+@media screen and (max-width : 768px){
+
+	.doc{
+		height: inherit;
+	}
+
+}
 
 .doc-container{
 
