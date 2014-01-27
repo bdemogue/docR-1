@@ -4,74 +4,84 @@
 
 h1{ margin: 0; }
 
-input, textarea{border:none; -webkit-appearance: none; -moz-appearance: none; @include border-radius(0px);}
-
+input, textarea{
+  border:none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  @include border-radius(0px);
+}
 body{
-	font-family: "Ubuntu";
-	font-size: 16px;
-	color: #333;
-	background: #FFF;
-
+  background: transparent url('img/bg.jpg') no-repeat 0 0;
+  background-size: cover;
+  color: #333;
+  font-family: "Ubuntu";
+  font-size: 16px;
 }
-
 .row{
-	margin:0;
+  margin:0;
 }
-
+.left{
+  float:left;
+}
+.right{
+  float:right;
+}
 /* ---------- NAV STYLES ---------*/
 
-	
-	@media screen and (max-width : 768px){
-		//FireFox fix for navbar
-		.navbar-form.filter{
-			clear: both;
-			position:fixed;
-			z-index:90;
-			right: 17px;
-			top: -10px;
-			left: 100px;
-	
-		}
-		.navbar-defaut .navbar-nav>li>a{
-			content:'';
-		}
-		.navbar-default{
-			.navbar-toggle{
-				margin-right: 0;
-				border: 0 none;
-				float: left;
-				margin-top: 10px;
-				padding: 10px 0;
-
-				.icon-bar{
-					background-color: #8D8D8D;
-				}
-			}	
-		}
-
-		.navbar-brand{
-			padding: 15px 5px;
-		}
-		
-
-	}
-
 header{
-	position: fixed;
-	overflow: hidden;
-	z-index:2;
-	left: 0; right: 0; top: 0;
+  position: fixed;
+  overflow: hidden;
+  z-index:2;
+  left: 0; right: 0; top: 0;
 }
 
-.navbar-brand{font-size: 22px;}
-.brand-color{color:#1ABC9C !important; font-weight: bold;}
+.navbar-brand{
+  font-size: 22px;
+}
+.brand-color{
+  color:#80c65e;
+  font-weight: bold;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #50CEDD;
+}
+@media screen and (max-width : 768px){
+//FireFox fix for navbar
+  .navbar-form.filter{
+    clear: both;
+    left: 100px;
+    position:fixed;
+    right: 17px;
+    top: -10px;
+    z-index:90;
+  }
+  .navbar-defaut .navbar-nav>li>a{
+    content:'';
+  }
+  .navbar-default{
+    .navbar-toggle{
+      margin-right: 0;
+      border: 0 none;
+      float: left;
+      margin-top: 10px;
+      padding: 10px 0;
 
+      .icon-bar{
+        background-color: #8D8D8D;
+      }
+    }
+  }
+  .navbar-brand{
+    padding: 15px 5px;
+  }
+}
 //menu items
 
 .navbar-default .navbar-nav>.active>a,
 .navbar-default .navbar-nav>.active>a:hover{
-	color: #FFF;
-	background-color: #035D99;
+  background-color: #97E272;
+  color: #FFF;
 }
 
 
@@ -83,73 +93,71 @@ header{
 
 /* ----------- CONTAINER ---------*/
 @media screen and (max-width : 768px){
-	.container{
-		z-index:1;
-		margin-top: 70px;
-	}
+  .container{
+    z-index:1;
+    margin-top: 70px;
+  }
 }
 
 @media screen and (min-width: 768px){
-	.container{
-		z-index:1000;
-		margin-top: 70px;
-	}
+  .container{
+    z-index:1000;
+    margin-top: 70px;
+  }
 }
-
 /* ------------ END CONTAINER ----*/
 
 /* --------- DOC STYLES  ---------*/
-
-@media screen and (max-width : 768px){
-
-	.doc{
-		height: inherit;
-	}
-
+.form-control{
+  border: 0 none;
+  border-radius: 0;
 }
-
-.doc-container{
-
+.navbar-form .form-group{
+  display: block;
 }
+.doc-container{}
 
 .doc {
-	position: relative;
-	background: #1ABC9C;
-	color:#fff;
-	margin:15px;
-	@include border-radius(5px);
-	border:1px solid darken(#1ABC9C,10);
-	text-align: center;
-	cursor: pointer;
-	padding: 15px;
-	height: 90px;
+  background: rgba(255, 255, 255, 0.3);;
+  color:#888;
+  cursor: pointer;
+
+  margin:15px;
+  padding: 10px;
+  position: relative;
 }
-
+.doc-header{
+  color:#666;
+}
 .doc-actions{
-	position: absolute;
-	display: block;
+  margin: 0 5px;
+  .glyphicon:before {
+    background: rgba(255, 255, 255, 0.6);
+    border: 2px double #FFFFFF;
+    color: #aaa;
+    display: inline-block;
+    padding: 0 1px;
+    text-align: center;
+  }
+}
+@media screen and (max-width : 768px){
+  .doc{
+    height: inherit;
+  }
+}
+.doc-actions{
+  span{
+    display: inline-block;
+    font-size: 26px;
+    height: 30px;
+    width: 30px;
 
-	&.left{
-		left: 10px; top: 7px;
-	}
-
-	&.right{
-		right: 10px; top: 5px;
-	}
-
-	span{
-		display: inline-block;
-		height: 30px; width: 30px;
-		font-size: 26px;
-	}
-
-
-
+  }
 }
 
 .doc-header{
-	font-weight: bold;
-	font-size: 18px;
+  font-weight: bold;
+  font-size: 18px;
 }
 
 
