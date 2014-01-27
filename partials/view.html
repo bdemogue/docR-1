@@ -7,19 +7,20 @@
 </div>
 <div class="row">
 	<div class="docs-container">
-		<div class="doc col-md-3 col-xs-10 col-sm-4" ng-repeat="doc in docs | filter:searchText">
-			<div class="doc-actions left">
-				<span class="glyphicon glyphicon-pencil edit"></span>
-			</div>
-			<div class="doc-actions right">
-				<span ng-click="remove(doc, $index)" class="glyphicon glyphicon-remove delete"></span>
-			</div>
-			<div class="doc-header">
+		<div class="doc clearfix" ng-repeat="doc in docs | filter:searchText">
+
+			<span class="doc-header ">
 				<span>{{ doc.cat }}</span>
-			</div>
-			<div class="doc-content">
+			</span>
+			<span class="doc-content ">
 				<span>{{ doc.desc }}</span>
-			</div>
+			</span>
+	                <span class="doc-actions right">
+	                        <span class="glyphicon glyphicon-pencil edit"></span>
+	                </span>
+	                <span class="doc-actions right">
+	                       <span ng-click="remove(doc, $index)" class="glyphicon glyphicon-remove delete"></span>
+	                </span>
 		</div>
 	</div>
 </div>	
