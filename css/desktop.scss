@@ -59,9 +59,14 @@ header{
 .navbar-default .navbar-nav > li > a:focus {
   color: #50CEDD;
 }
-@media screen and (max-width : 768px){
+
+.filter{
+  position:fixed;
+  z-index:2;
+  top:45px;
+}
+@media screen and (max-width : 40em){
   .filter{
-    position: fixed;
     top:4px;
     z-index:2;
     left: 60px;
@@ -84,14 +89,14 @@ header{
 
 
 /* ----------- CONTAINER ---------*/
-@media screen and (max-width : 768px){
+@media screen and (max-width : 40em){
   .container{
     z-index:1;
     margin-top: 70px;
   }
 }
 
-@media screen and (min-width: 768px){
+@media screen and (min-width: 40em){
   .container{
     z-index:1000;
     margin-top: 70px;
@@ -107,7 +112,9 @@ header{
 .navbar-form .form-group{
   display: block;
 }
-.doc-container{}
+.docs-container{
+  margin-top: 30px;
+}
 
 .doc {
   background: rgba(255, 255, 255, 0.5);;
@@ -132,7 +139,7 @@ header{
     text-align: center;
   }
 }
-@media screen and (max-width : 768px){
+@media screen and (max-width : 40em){
   .doc{
     height: inherit;
   }

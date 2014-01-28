@@ -81,24 +81,30 @@ header {
   color: #50CEDD;
 }
 
-@media screen and (max-width: 768px) {
-  /* line 63, desktop.scss */
+/* line 63, desktop.scss */
+.filter {
+  position: fixed;
+  z-index: 2;
+  top: 45px;
+}
+
+@media screen and (max-width: 40em) {
+  /* line 69, desktop.scss */
   .filter {
-    position: fixed;
     top: 4px;
     z-index: 2;
     left: 60px;
     width: 80%;
   }
 }
-/* line 74, desktop.scss */
+/* line 79, desktop.scss */
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover {
   background-color: #97E272;
   color: #FFF;
 }
 
-/* line 81, desktop.scss */
+/* line 86, desktop.scss */
 .badge {
   line-height: 1.2;
   margin-left: 5px;
@@ -108,15 +114,15 @@ header {
 
 /* -----------END NAV STYLES -----*/
 /* ----------- CONTAINER ---------*/
-@media screen and (max-width: 768px) {
-  /* line 88, desktop.scss */
+@media screen and (max-width: 40em) {
+  /* line 93, desktop.scss */
   .container {
     z-index: 1;
     margin-top: 70px;
   }
 }
-@media screen and (min-width: 768px) {
-  /* line 95, desktop.scss */
+@media screen and (min-width: 40em) {
+  /* line 100, desktop.scss */
   .container {
     z-index: 1000;
     margin-top: 70px;
@@ -124,18 +130,23 @@ header {
 }
 /* ------------ END CONTAINER ----*/
 /* --------- DOC STYLES  ---------*/
-/* line 103, desktop.scss */
+/* line 108, desktop.scss */
 .form-control {
   border: 0 none;
   border-radius: 0;
 }
 
-/* line 107, desktop.scss */
+/* line 112, desktop.scss */
 .navbar-form .form-group {
   display: block;
 }
 
-/* line 112, desktop.scss */
+/* line 115, desktop.scss */
+.docs-container {
+  margin-top: 30px;
+}
+
+/* line 119, desktop.scss */
 .doc {
   background: rgba(255, 255, 255, 0.5);
   color: #888;
@@ -145,16 +156,16 @@ header {
   position: relative;
 }
 
-/* line 121, desktop.scss */
+/* line 128, desktop.scss */
 .doc-header {
   color: #666;
 }
 
-/* line 124, desktop.scss */
+/* line 131, desktop.scss */
 .doc-actions {
   margin: 0 5px;
 }
-/* line 126, desktop.scss */
+/* line 133, desktop.scss */
 .doc-actions .glyphicon:before {
   background: rgba(255, 255, 255, 0.6);
   border: 2px double #FFFFFF;
@@ -164,13 +175,13 @@ header {
   text-align: center;
 }
 
-@media screen and (max-width: 768px) {
-  /* line 136, desktop.scss */
+@media screen and (max-width: 40em) {
+  /* line 143, desktop.scss */
   .doc {
     height: inherit;
   }
 }
-/* line 141, desktop.scss */
+/* line 148, desktop.scss */
 .doc-actions span {
   display: inline-block;
   font-size: 26px;
@@ -178,7 +189,7 @@ header {
   width: 30px;
 }
 
-/* line 150, desktop.scss */
+/* line 157, desktop.scss */
 .doc-header {
   font-weight: bold;
   font-size: 18px;
