@@ -28,7 +28,7 @@ docRApp.config(["$routeProvider", "$locationProvider",'localStorageServiceProvid
 
 docRApp.controller('NavCtrl',['$scope','$location','userDocsService', function($scope, $location, userDocsService){
 	//collapse
-	$scope.isCollapsed = true;
+	$scope.isSidebar = false;
 
 	//active menu
 	$scope.isActive = function(viewLocation){
@@ -36,8 +36,11 @@ docRApp.controller('NavCtrl',['$scope','$location','userDocsService', function($
 	};
 
 	//Show sidebar with hammer, swipe / drag gestures
-	$scope.sideBar = function(e){
-		e ? console.log(e) : '';	
+	$scope.sidebar = function(e){
+		$scope.isSidebar = true;
+		if(e){
+			console.log(e);
+		}
 	}
 
 
