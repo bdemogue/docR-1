@@ -59,6 +59,19 @@ header{
   }
 }
 
+
+//sidebar
+
+.sidebar{
+  position: absolute;
+  top: 0; bottom: 0; left: 0;
+  width: 200px;
+  background: #333;
+  z-index: 2;
+  padding:15px;
+  
+}
+
 //nav filter
 
 .navbar-default .navbar-nav > li > a:hover,
@@ -97,17 +110,13 @@ header{
 
 
 /* ----------- CONTAINER ---------*/
+
+.container{
+margin-top: 45px;
+}
 @media screen and (max-width : 40em){
   .container{
     z-index:1;
-    margin-top: 30px;
-  }
-}
-
-@media screen and (min-width: 40em){
-  .container{
-    z-index:1000;
-    margin-top: 70px;
   }
 }
 /* ------------ END CONTAINER ----*/
@@ -120,9 +129,14 @@ header{
 .navbar-form .form-group{
   display: block;
 }
-.docs-container{
-  margin-top: 30px;
+
+
+@media screen and (min-width:  40em){
+  .docs-container{
+    margin-top: 50px;
+  }
 }
+
 
 .doc {
   background: rgba(255, 255, 255, 0.5);;
@@ -149,7 +163,7 @@ header{
 }
 @media screen and (max-width : 40em){
   .doc{
-    
+
     .doc-header{
       display:block;
     }

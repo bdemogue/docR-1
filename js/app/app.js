@@ -37,10 +37,13 @@ docRApp.controller('NavCtrl',['$scope','$location','userDocsService', function($
 
 	//Show sidebar with hammer, swipe / drag gestures
 	$scope.sidebar = function(e){
-		$scope.isSidebar = true;
-		if(e){
+		$scope.isSidebar = !$scope.isSidebar;
+		if($scope.isSidebar){
+			if(e){
 			console.log(e);
+			}
 		}
+		
 	}
 
 
@@ -79,6 +82,17 @@ docRApp.controller('AddDocCtrl',['$scope','$location','$http', function($scope, 
     };
 	
 }]);
+
+docRApp.directive('sidebar', function(){
+	return {
+		restrict : 'E',
+		templateUrl: 'partials/directives/sidebar.html',
+		link : function(scope, element, attrs, event){
+			
+			console.log(scope);
+		}
+	}
+});
 
 //Set mongolab ressource
 
