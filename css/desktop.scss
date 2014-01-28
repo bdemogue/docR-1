@@ -70,15 +70,17 @@ header{
   position:fixed;
   z-index:2;
   top:45px;
+
 }
 @media screen and (max-width : 40em){
   .filter{
     top:4px;
     z-index:2;
     left: 73px;
-    width: 80%;
+    width: 79%;
   }
 }
+
 //menu items
 
 .navbar-default .navbar-nav>.active>a,
@@ -147,7 +149,10 @@ header{
 }
 @media screen and (max-width : 40em){
   .doc{
-    height: inherit;
+    
+    .doc-header{
+      display:block;
+    }
   }
 }
 .doc-actions{

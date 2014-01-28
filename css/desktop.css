@@ -97,22 +97,22 @@ header {
 }
 
 @media screen and (max-width: 40em) {
-  /* line 75, desktop.scss */
+  /* line 76, desktop.scss */
   .filter {
     top: 4px;
     z-index: 2;
     left: 73px;
-    width: 80%;
+    width: 79%;
   }
 }
-/* line 85, desktop.scss */
+/* line 87, desktop.scss */
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover {
   background-color: #97E272;
   color: #FFF;
 }
 
-/* line 92, desktop.scss */
+/* line 94, desktop.scss */
 .badge {
   line-height: 1.2;
   margin-left: 5px;
@@ -123,14 +123,14 @@ header {
 /* -----------END NAV STYLES -----*/
 /* ----------- CONTAINER ---------*/
 @media screen and (max-width: 40em) {
-  /* line 99, desktop.scss */
+  /* line 101, desktop.scss */
   .container {
     z-index: 1;
     margin-top: 30px;
   }
 }
 @media screen and (min-width: 40em) {
-  /* line 106, desktop.scss */
+  /* line 108, desktop.scss */
   .container {
     z-index: 1000;
     margin-top: 70px;
@@ -138,23 +138,23 @@ header {
 }
 /* ------------ END CONTAINER ----*/
 /* --------- DOC STYLES  ---------*/
-/* line 114, desktop.scss */
+/* line 116, desktop.scss */
 .form-control {
   border: 0 none;
   border-radius: 0;
 }
 
-/* line 118, desktop.scss */
+/* line 120, desktop.scss */
 .navbar-form .form-group {
   display: block;
 }
 
-/* line 121, desktop.scss */
+/* line 123, desktop.scss */
 .docs-container {
   margin-top: 30px;
 }
 
-/* line 125, desktop.scss */
+/* line 127, desktop.scss */
 .doc {
   background: rgba(255, 255, 255, 0.5);
   color: #888;
@@ -165,16 +165,16 @@ header {
   line-height: 46px;
 }
 
-/* line 134, desktop.scss */
+/* line 136, desktop.scss */
 .doc-header {
   color: #666;
 }
 
-/* line 137, desktop.scss */
+/* line 139, desktop.scss */
 .doc-actions {
   margin: 0 5px;
 }
-/* line 139, desktop.scss */
+/* line 141, desktop.scss */
 .doc-actions .glyphicon:before {
   background: rgba(255, 255, 255, 0.6);
   border: 2px double #FFFFFF;
@@ -185,12 +185,12 @@ header {
 }
 
 @media screen and (max-width: 40em) {
-  /* line 149, desktop.scss */
-  .doc {
-    height: inherit;
+  /* line 153, desktop.scss */
+  .doc .doc-header {
+    display: block;
   }
 }
-/* line 154, desktop.scss */
+/* line 159, desktop.scss */
 .doc-actions span {
   display: inline-block;
   font-size: 26px;
@@ -198,7 +198,7 @@ header {
   width: 30px;
 }
 
-/* line 163, desktop.scss */
+/* line 168, desktop.scss */
 .doc-header {
   font-weight: bold;
   font-size: 18px;
