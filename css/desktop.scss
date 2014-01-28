@@ -50,6 +50,12 @@ header{
     left:1px;
     right:auto;
     padding-left:0;
+    a{
+      padding-right: 17px;
+    }
+  }
+  .name>h1>a{
+    padding:0 22px;
   }
 }
 
@@ -69,7 +75,7 @@ header{
   .filter{
     top:4px;
     z-index:2;
-    left: 60px;
+    left: 73px;
     width: 80%;
   }
 }
