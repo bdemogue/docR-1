@@ -58,7 +58,7 @@ header {
 }
 
 /* line 38, desktop.scss */
-.navbar-brand {
+.name > h1 > a {
   font-size: 22px;
 }
 
@@ -68,54 +68,37 @@ header {
   font-weight: bold;
 }
 
-/* line 46, desktop.scss */
+/* line 49, desktop.scss */
+.top-bar .toggle-topbar.menu-icon {
+  left: 1px;
+  right: auto;
+  padding-left: 0;
+}
+
+/* line 59, desktop.scss */
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
   color: #50CEDD;
 }
 
 @media screen and (max-width: 768px) {
-  /* line 51, desktop.scss */
-  .navbar-form.filter {
-    clear: both;
-    left: 100px;
-    position: fixed;
-    right: 17px;
-    top: -10px;
-    z-index: 90;
-  }
-
-  /* line 59, desktop.scss */
-  .navbar-defaut .navbar-nav > li > a {
-    content: '';
-  }
-
   /* line 63, desktop.scss */
-  .navbar-default .navbar-toggle {
-    margin-right: 0;
-    border: 0 none;
-    float: left;
-    margin-top: 10px;
-    padding: 10px 0;
-  }
-  /* line 70, desktop.scss */
-  .navbar-default .navbar-toggle .icon-bar {
-    background-color: #8D8D8D;
-  }
-
-  /* line 75, desktop.scss */
-  .navbar-brand {
-    padding: 15px 5px;
+  .filter {
+    position: fixed;
+    top: 4px;
+    z-index: 2;
+    left: 60px;
+    width: 80%;
   }
 }
-/* line 82, desktop.scss */
+/* line 74, desktop.scss */
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover {
   background-color: #97E272;
   color: #FFF;
 }
 
-/* line 89, desktop.scss */
+/* line 81, desktop.scss */
 .badge {
   line-height: 1.2;
   margin-left: 5px;
@@ -126,14 +109,14 @@ header {
 /* -----------END NAV STYLES -----*/
 /* ----------- CONTAINER ---------*/
 @media screen and (max-width: 768px) {
-  /* line 96, desktop.scss */
+  /* line 88, desktop.scss */
   .container {
     z-index: 1;
     margin-top: 70px;
   }
 }
 @media screen and (min-width: 768px) {
-  /* line 103, desktop.scss */
+  /* line 95, desktop.scss */
   .container {
     z-index: 1000;
     margin-top: 70px;
@@ -141,18 +124,18 @@ header {
 }
 /* ------------ END CONTAINER ----*/
 /* --------- DOC STYLES  ---------*/
-/* line 111, desktop.scss */
+/* line 103, desktop.scss */
 .form-control {
   border: 0 none;
   border-radius: 0;
 }
 
-/* line 115, desktop.scss */
+/* line 107, desktop.scss */
 .navbar-form .form-group {
   display: block;
 }
 
-/* line 120, desktop.scss */
+/* line 112, desktop.scss */
 .doc {
   background: rgba(255, 255, 255, 0.5);
   color: #888;
@@ -162,16 +145,16 @@ header {
   position: relative;
 }
 
-/* line 129, desktop.scss */
+/* line 121, desktop.scss */
 .doc-header {
   color: #666;
 }
 
-/* line 132, desktop.scss */
+/* line 124, desktop.scss */
 .doc-actions {
   margin: 0 5px;
 }
-/* line 134, desktop.scss */
+/* line 126, desktop.scss */
 .doc-actions .glyphicon:before {
   background: rgba(255, 255, 255, 0.6);
   border: 2px double #FFFFFF;
@@ -182,12 +165,12 @@ header {
 }
 
 @media screen and (max-width: 768px) {
-  /* line 144, desktop.scss */
+  /* line 136, desktop.scss */
   .doc {
     height: inherit;
   }
 }
-/* line 149, desktop.scss */
+/* line 141, desktop.scss */
 .doc-actions span {
   display: inline-block;
   font-size: 26px;
@@ -195,7 +178,7 @@ header {
   width: 30px;
 }
 
-/* line 158, desktop.scss */
+/* line 150, desktop.scss */
 .doc-header {
   font-weight: bold;
   font-size: 18px;

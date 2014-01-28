@@ -35,45 +35,37 @@ header{
   left: 0; right: 0; top: 0;
 }
 
-.navbar-brand{
+.name>h1>a{
   font-size: 22px;
 }
 .brand-color{
   color:#80c65e;
   font-weight: bold;
 }
+
+//topbar menu
+
+.top-bar {
+  .toggle-topbar.menu-icon{
+    left:1px;
+    right:auto;
+    padding-left:0;
+  }
+}
+
+//nav filter
+
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
   color: #50CEDD;
 }
 @media screen and (max-width : 768px){
-//FireFox fix for navbar
-  .navbar-form.filter{
-    clear: both;
-    left: 100px;
-    position:fixed;
-    right: 17px;
-    top: -10px;
-    z-index:90;
-  }
-  .navbar-defaut .navbar-nav>li>a{
-    content:'';
-  }
-  .navbar-default{
-    .navbar-toggle{
-      margin-right: 0;
-      border: 0 none;
-      float: left;
-      margin-top: 10px;
-      padding: 10px 0;
-
-      .icon-bar{
-        background-color: #8D8D8D;
-      }
-    }
-  }
-  .navbar-brand{
-    padding: 15px 5px;
+  .filter{
+    position: fixed;
+    top:4px;
+    z-index:2;
+    left: 60px;
+    width: 80%;
   }
 }
 //menu items

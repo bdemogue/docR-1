@@ -1,10 +1,10 @@
-<div class="row">
-	<form class="navbar-form filter" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Filtrer..." ng-model="searchText">      
-        </div>
-    </form>
-</div>
+<form>
+	<div class="row">
+	    <div class="large-12 columns filter">
+	          <input type="text" class="form-control" placeholder="Filtrer..." ng-model="searchText">      
+	    </div>
+	</div>
+</form>
 <div class="row">
 	<div class="docs-container">
 		<div class="doc clearfix col-md-12 col-xs-12 col-sm-12" ng-repeat="doc in docs | filter:searchText">
