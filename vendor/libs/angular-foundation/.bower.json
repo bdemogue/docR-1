@@ -1,0 +1,23 @@
+{
+  "author": {
+    "name": "https://github.com/madmimi/angular-foundation/graphs/contributors"
+  },
+  "name": "angular-bootstrap",
+  "version": "0.0.0",
+  "main": [
+    "./mm-foundation-tpls.js"
+  ],
+  "dependencies": {
+    "angular": ">=1"
+  },
+  "homepage": "https://github.com/madmimi/angular-foundation-bower",
+  "_release": "0.0.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.0.0",
+    "commit": "cc90d57739530917af7c5f122934ffb9bd6d3998"
+  },
+  "_source": "git://github.com/madmimi/angular-foundation-bower.git",
+  "_target": "~0.0.0",
+  "_originalSource": "angular-foundation"
+}
