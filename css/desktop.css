@@ -126,7 +126,7 @@ header {
   /* line 99, desktop.scss */
   .container {
     z-index: 1;
-    margin-top: 70px;
+    margin-top: 30px;
   }
 }
 @media screen and (min-width: 40em) {
@@ -160,8 +160,9 @@ header {
   color: #888;
   cursor: pointer;
   margin: 15px;
-  padding: 10px;
+  padding: 0 10px;
   position: relative;
+  line-height: 46px;
 }
 
 /* line 134, desktop.scss */
