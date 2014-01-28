@@ -25,7 +25,7 @@
             <li class="name">
               <h1><a href="#/docs">doc<span class="brand-color">R</span></a></h1>
             </li>
-            <li ng-click="isCollapsed !=isCollapsed" class="toggle-topbar menu-icon"><a href="#"></a></li>
+            <li class="toggle-topbar menu-icon"><a hm-tap="sideBar()" href=""></a></li>
           </ul>
 
           <section class="top-bar-section">
@@ -40,8 +40,8 @@
         </nav>
       </header>
 
-      <div class="container">
-        <div ng-view></div>
+      <div class="container" ng-controller="NavCtrl">
+        <div hm-drag="sideBar($event)" ng-view></div>
       </div>
 
       <script type="text/javascript" src="vendor/libs/jquery/jquery.min.js"></script>
@@ -51,6 +51,8 @@
       <script type="text/javascript" src="vendor/libs/angular-local-storage/angular-local-storage.min.js"></script>
       <script type="text/javascript" src="vendor/libs/angular-resource/angular-resource.min.js"></script>
       <script type="text/javascript" src="vendor/libs/angular-mongolab-promise/src/mongolabResourceHttp.js"></script>
+      <script type="text/javascript" src="vendor/libs/hammerjs/hammer.min.js"></script>
+      <script type="text/javascript" src="vendor/libs/angular-hammer/angular-hammer.js"></script>
       <script type="text/javascript" src="vendor/libs/angular-foundation/mm-foundation-tpls.min.js"></script>
       <script type="text/javascript" src="vendor/libs/angular-ui-select2/src/select2.js"></script>
       <script type="text/javascript" src="js/app/app.js"></script>

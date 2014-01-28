@@ -1,4 +1,4 @@
-var docRApp = angular.module('docR', ['ngRoute', 'mm.foundation', 'ui.select2', 'LocalStorageModule', 'mongolabResourceHttp']);
+var docRApp = angular.module('docR', ['ngRoute', 'mm.foundation', 'hmTouchEvents', 'ui.select2', 'LocalStorageModule', 'mongolabResourceHttp']);
 
 docRApp.constant('MONGOLAB_CONFIG',{API_KEY:'RaaG5FZIUwKBa3Men9gHm9oM9Siv1Vi8', DB_NAME:'docr'});
 
@@ -35,6 +35,11 @@ docRApp.controller('NavCtrl',['$scope','$location','userDocsService', function($
 		return viewLocation === $location.path();
 	};
 
+	//Show sidebar with hammer, swipe / drag gestures
+	$scope.sideBar = function(e){
+		e ? console.log(e) : '';	
+	}
+
 
 }]);
 
@@ -44,14 +49,14 @@ docRApp.controller('DocsCtrl',['$scope','$location','$http','userDocsService', '
 	console.log($scope.docs);
 
 	$scope.remove = function(doc, index){
-		doc.$remove(function(){
+		/*doc.$remove(function(){
 
 			$scope.docs.splice(index, 1);
 			$location.path('/docs');
 
 		}, function(){
 			throw new Error("Sth went wrong...");
-		})
+		})*/
 	}
 	
 }]);

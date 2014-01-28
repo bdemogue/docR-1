@@ -17,6 +17,7 @@
     "angular-resource": "~1.2.10",
     "angular-mongolab-promise": "https://github.com/pkozlowski-opensource/angularjs-mongolab-promise.git",
     "foundation": "~5.0.3",
-    "angular-foundation": "~0.0.0"
+    "angular-foundation": "~0.0.0",
+    "angular-hammer": "~1.0.3"
   }
 }
