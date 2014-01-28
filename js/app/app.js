@@ -1,4 +1,4 @@
-var docRApp = angular.module('docR', ['ngRoute', 'ui.bootstrap', 'ui.select2', 'LocalStorageModule', 'mongolabResourceHttp']);
+var docRApp = angular.module('docR', ['ngRoute', 'mm.foundation', 'ui.select2', 'LocalStorageModule', 'mongolabResourceHttp']);
 
 docRApp.constant('MONGOLAB_CONFIG',{API_KEY:'RaaG5FZIUwKBa3Men9gHm9oM9Siv1Vi8', DB_NAME:'docr'});
 
