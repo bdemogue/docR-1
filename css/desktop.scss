@@ -81,6 +81,19 @@ header{
     @include transform(translateX(200px));
    
   }
+
+  .side-nav{
+    
+    li a {
+      font-size: 18px;
+      font-family: "Ubuntu";
+      color:#FFF;
+    }
+
+    li.active>a:first-child{
+      color:#80C65E;
+    }
+  }
 }
 
 // shorten button lines duration
