@@ -1,4 +1,4 @@
-var docRApp = angular.module('docR', ['ngRoute', 'mm.foundation', 'hmTouchEvents', 'ui.select2', 'LocalStorageModule', 'mongolabResourceHttp']);
+var docRApp = angular.module('docR', ['ngRoute', 'ngAnimate', 'mm.foundation', 'hmTouchEvents', 'ui.select2', 'LocalStorageModule', 'mongolabResourceHttp']);
 
 docRApp.constant('MONGOLAB_CONFIG',{API_KEY:'RaaG5FZIUwKBa3Men9gHm9oM9Siv1Vi8', DB_NAME:'docr'});
 
@@ -36,14 +36,13 @@ docRApp.controller('NavCtrl',['$scope','$location','userDocsService', function($
 	};
 
 	//Show sidebar with hammer, swipe / drag gestures
-	$scope.sidebar = function(e){
+	
+	$scope.closeSidebar = function(event){
+		$scope.isSidebar = false;
+	}
+
+	$scope.sidebar = function(event){
 		$scope.isSidebar = !$scope.isSidebar;
-		if($scope.isSidebar){
-			if(e){
-			console.log(e);
-			}
-		}
-		
 	}
 
 
@@ -52,7 +51,7 @@ docRApp.controller('NavCtrl',['$scope','$location','userDocsService', function($
 docRApp.controller('DocsCtrl',['$scope','$location','$http','userDocsService', 'docs', function($scope, $location, $http, userDocsService, docs){
 	
 	$scope.docs = docs;
-	console.log($scope.docs);
+	//console.log($scope.docs);
 
 	$scope.remove = function(doc, index){
 		/*doc.$remove(function(){
@@ -83,13 +82,30 @@ docRApp.controller('AddDocCtrl',['$scope','$location','$http', function($scope, 
 	
 }]);
 
-docRApp.directive('sidebar', function(){
+docRApp.directive('sidebar', function($animate){
 	return {
 		restrict : 'E',
-		templateUrl: 'partials/directives/sidebar.html',
-		link : function(scope, element, attrs, event){
-			
-			console.log(scope);
+		templateUrl :'partials/directives/sidebar.html',
+		link : function(scope, element, attrs){
+			var body = angular.element('body');
+			var container = angular.element('.container');
+			var btnLines = angular.element('.top-bar .toggle-topbar.menu-icon a');
+			scope.$watch('isSidebar',function(){
+				if(scope.isSidebar){
+					body.css({ overflow:'hidden' });
+
+					container.css({ opacity : .3 });
+					btnLines.animate({ right:'10px'}, 50);
+				}
+				else{
+					body.css({ overflow:'auto' });
+
+					container.css({	opacity : 1 });
+
+					btnLines.animate({right:'1px'}, 50);
+				}
+			});
+				
 		}
 	}
 });

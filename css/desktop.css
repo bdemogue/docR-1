@@ -70,38 +70,60 @@ header {
 
 /* line 49, desktop.scss */
 .top-bar .toggle-topbar.menu-icon {
-  left: 1px;
   right: auto;
   padding-left: 0;
 }
-/* line 53, desktop.scss */
+/* line 52, desktop.scss */
 .top-bar .toggle-topbar.menu-icon a {
   padding-right: 17px;
 }
-/* line 57, desktop.scss */
+/* line 56, desktop.scss */
 .top-bar .name > h1 > a {
   padding: 0 22px;
 }
 
-/* line 65, desktop.scss */
+/* line 64, desktop.scss */
 .sidebar {
   position: absolute;
   top: 0;
   bottom: 0;
-  left: 0;
+  left: 0px;
   width: 200px;
   background: #333;
   z-index: 2;
   padding: 15px;
+  opacity: 1;
+  overflow: scroll-y;
+  -webkit-transition: 0.15s;
+  -moz-transition: 0.15s;
+  -o-transition: 0.15s;
+  transition: 0.15s;
+}
+/* line 75, desktop.scss */
+.sidebar.ng-hide-remove {
+  -webkit-transform: translateX(-200px);
+  -moz-transform: translateX(-200px);
+  -ms-transform: translateX(-200px);
+  -o-transform: translateX(-200px);
+  transform: translateX(-200px);
+  opacity: 0;
+}
+/* line 80, desktop.scss */
+.sidebar.ng-hide-add, .sidebar.ng-hide-add-active {
+  -webkit-transform: translateX(200px);
+  -moz-transform: translateX(200px);
+  -ms-transform: translateX(200px);
+  -o-transform: translateX(200px);
+  transform: translateX(200px);
 }
 
-/* line 78, desktop.scss */
+/* line 92, desktop.scss */
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
   color: #50CEDD;
 }
 
-/* line 82, desktop.scss */
+/* line 96, desktop.scss */
 .filter {
   position: fixed;
   z-index: 2;
@@ -109,7 +131,7 @@ header {
 }
 
 @media screen and (max-width: 40em) {
-  /* line 89, desktop.scss */
+  /* line 103, desktop.scss */
   .filter {
     top: 4px;
     z-index: 2;
@@ -117,14 +139,14 @@ header {
     width: 79%;
   }
 }
-/* line 100, desktop.scss */
+/* line 114, desktop.scss */
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover {
   background-color: #97E272;
   color: #FFF;
 }
 
-/* line 107, desktop.scss */
+/* line 121, desktop.scss */
 .badge {
   line-height: 1.2;
   margin-left: 5px;
@@ -134,37 +156,51 @@ header {
 
 /* -----------END NAV STYLES -----*/
 /* ----------- CONTAINER ---------*/
-/* line 114, desktop.scss */
+/* line 129, desktop.scss */
+.swipezone {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+}
+
+/* line 138, desktop.scss */
+.animate {
+  width: 200px;
+}
+
+/* line 142, desktop.scss */
 .container {
   margin-top: 45px;
 }
 
 @media screen and (max-width: 40em) {
-  /* line 118, desktop.scss */
+  /* line 146, desktop.scss */
   .container {
     z-index: 1;
   }
 }
 /* ------------ END CONTAINER ----*/
 /* --------- DOC STYLES  ---------*/
-/* line 125, desktop.scss */
+/* line 153, desktop.scss */
 .form-control {
   border: 0 none;
   border-radius: 0;
 }
 
-/* line 129, desktop.scss */
+/* line 157, desktop.scss */
 .navbar-form .form-group {
   display: block;
 }
 
 @media screen and (min-width: 40em) {
-  /* line 135, desktop.scss */
+  /* line 163, desktop.scss */
   .docs-container {
     margin-top: 50px;
   }
 }
-/* line 141, desktop.scss */
+/* line 169, desktop.scss */
 .doc {
   background: rgba(255, 255, 255, 0.5);
   color: #888;
@@ -175,16 +211,16 @@ header {
   line-height: 46px;
 }
 
-/* line 150, desktop.scss */
+/* line 178, desktop.scss */
 .doc-header {
   color: #666;
 }
 
-/* line 153, desktop.scss */
+/* line 181, desktop.scss */
 .doc-actions {
   margin: 0 5px;
 }
-/* line 155, desktop.scss */
+/* line 183, desktop.scss */
 .doc-actions .glyphicon:before {
   background: rgba(255, 255, 255, 0.6);
   border: 2px double #FFFFFF;
@@ -195,12 +231,12 @@ header {
 }
 
 @media screen and (max-width: 40em) {
-  /* line 167, desktop.scss */
+  /* line 195, desktop.scss */
   .doc .doc-header {
     display: block;
   }
 }
-/* line 173, desktop.scss */
+/* line 201, desktop.scss */
 .doc-actions span {
   display: inline-block;
   font-size: 26px;
@@ -208,7 +244,7 @@ header {
   width: 30px;
 }
 
-/* line 182, desktop.scss */
+/* line 210, desktop.scss */
 .doc-header {
   font-weight: bold;
   font-size: 18px;

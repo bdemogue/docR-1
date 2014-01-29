@@ -47,7 +47,6 @@ header{
 
 .top-bar {
   .toggle-topbar.menu-icon{
-    left:1px;
     right:auto;
     padding-left:0;
     a{
@@ -64,13 +63,28 @@ header{
 
 .sidebar{
   position: absolute;
-  top: 0; bottom: 0; left: 0;
+  top: 0; bottom: 0; left: 0px;
   width: 200px;
   background: #333;
   z-index: 2;
   padding:15px;
-  
+  opacity:1;
+  overflow: scroll-y;
+  @include transition(.15s);
+
+  &.ng-hide-remove{
+    @include transform(translateX(-200px));
+    opacity:0;
+    
+  }
+  &.ng-hide-add, &.ng-hide-add-active{
+    @include transform(translateX(200px));
+   
+  }
 }
+
+// shorten button lines duration
+
 
 //nav filter
 
@@ -110,6 +124,20 @@ header{
 
 
 /* ----------- CONTAINER ---------*/
+
+//swipe area
+.swipezone{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+
+}
+
+.animate{
+  width: 200px;
+}
 
 .container{
 margin-top: 45px;
@@ -183,6 +211,8 @@ margin-top: 45px;
   font-weight: bold;
   font-size: 18px;
 }
+
+//Animations
 
 
 
