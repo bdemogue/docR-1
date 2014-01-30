@@ -26,25 +26,43 @@ docRApp.config(["$routeProvider", "$locationProvider",'localStorageServiceProvid
 }]);
 
 docRApp.controller('NavCtrl',['$scope','$location', function($scope, $location){
+
+	$scope.hmEvents = {
+		isSidebar : false,
+		type :'',
+		event : {}
+	}
+	
+
 	$scope.$on('$routeChangeSuccess',function(){
-		$scope.isSidebar = false;
-	})
-	$scope.isSidebar = false;
-	console.log($scope.isSidebar);
+		$scope.hmEvents.isSidebar = false;
+	});
+	
 	//active menu
 	$scope.isActive = function(viewLocation){
 		return viewLocation === $location.path();
 	};
 
 	//Show sidebar with hammer, swipe / drag gestures
+
 	
 	$scope.closeSidebar = function(event){
-		$scope.isSidebar = false;
+		$scope.hmEvents.isSidebar = false;
 	}
 
-	$scope.sidebar = function(event){
-		$scope.isSidebar = !$scope.isSidebar;
-		console.log($scope.isSidebar);
+	$scope.sidebar = function(event, type){
+
+		$scope.hmEvents.type = type;
+		switch(type){
+			case 'tap':
+				$scope.hmEvents.isSidebar = !$scope.hmEvents.isSidebar;
+				break;
+			case 'drag':
+				$scope.hmEvents.event = event;
+				break; 
+		}
+
+		console.log($scope.hmEvents);
 	}
 
 
@@ -90,36 +108,50 @@ docRApp.directive('sidebar', ['$timeout', function($timeout){
 		restrict : 'E',
 		templateUrl :'partials/directives/sidebar.html',
 		link : function postLink(scope, element, attrs){
-
+			console.log(scope);
 			scope.$on('$viewContentLoaded', function() {
-				
-				scope.$watch('isSidebar',function(){
-					var body = angular.element('body');
-					var page = angular.element('#page');
-					var btnLines = angular.element('.top-bar .toggle-topbar.menu-icon a');
-					var topBar = angular.element('.top-bar');
-					if(scope.isSidebar){
-						body.css({ overflow:'hidden' });
 
-						page.css({ opacity : .3 });
-						btnLines.animate({ right:'10px'}, 50);
-						topBar.css({ borderBottom: '1px solid #777' });
+				var body   = angular.element('body'),
+					page     = angular.element('#page'),
+					btnLines = angular.element('.top-bar .toggle-topbar.menu-icon a'),
+					topBar   = angular.element('.top-bar'),
+					sideBar  = angular.element(element);
+
+				var popSidebar = function(){
+					sideBar.show().animate({left: '0px'}, 50);
+					body.css({ overflow:'hidden' });
+					page.css({ opacity : .3 });
+					btnLines.animate({ right:'10px'}, 50);
+					topBar.css({ borderBottom: '1px solid #777' });
+				}
+
+				var hideSidebar = function(){
+					sideBar.animate({left: '-200px'}, 50, 'linear').promise().pipe(function(){
+						sideBar.hide();
+					})
+					body.css({ overflow:'auto' });
+					page.css({	opacity : 1 });
+					btnLines.animate({right:'1px'}, 50);
+					topBar.css({ borderBottom: '0 none' });
+				}	
+				
+				scope.$watch('hmEvents.isSidebar',function(){
+					
+
+					if(scope.hmEvents.isSidebar){
+						popSidebar();
 					}
 					else{
-						body.css({ overflow:'auto' });
-
-						page.css({	opacity : 1 });
-
-						btnLines.animate({right:'1px'}, 50);
-
-						topBar.css({ borderBottom: '0 none' });
+						hideSidebar();
 					}
 				})
-			})
+			})			
+		},
+
 		
-				
-		}	
 	}
+
+	
 }]);
 
 //Set mongolab ressource

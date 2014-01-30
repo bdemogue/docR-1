@@ -87,7 +87,8 @@ header {
   position: absolute;
   top: 0;
   bottom: 0;
-  left: 0px;
+  left: -200px;
+  display: none;
   width: 200px;
   background: #333;
   z-index: 2;
@@ -99,41 +100,24 @@ header {
   -o-transition: 0.15s;
   transition: 0.15s;
 }
-/* line 75, desktop.scss */
-.sidebar.ng-hide-remove {
-  -webkit-transform: translateX(-200px);
-  -moz-transform: translateX(-200px);
-  -ms-transform: translateX(-200px);
-  -o-transform: translateX(-200px);
-  transform: translateX(-200px);
-  opacity: 0;
-}
-/* line 80, desktop.scss */
-.sidebar.ng-hide-add, .sidebar.ng-hide-add-active {
-  -webkit-transform: translateX(200px);
-  -moz-transform: translateX(200px);
-  -ms-transform: translateX(200px);
-  -o-transform: translateX(200px);
-  transform: translateX(200px);
-}
-/* line 87, desktop.scss */
+/* line 78, desktop.scss */
 .sidebar .side-nav li a {
   font-size: 18px;
   font-family: "Ubuntu";
   color: #FFF;
 }
-/* line 93, desktop.scss */
+/* line 84, desktop.scss */
 .sidebar .side-nav li.active > a:first-child {
   color: #80C65E;
 }
 
-/* line 105, desktop.scss */
+/* line 96, desktop.scss */
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
   color: #50CEDD;
 }
 
-/* line 109, desktop.scss */
+/* line 100, desktop.scss */
 .filter {
   position: fixed;
   z-index: 2;
@@ -141,7 +125,7 @@ header {
 }
 
 @media screen and (max-width: 40em) {
-  /* line 116, desktop.scss */
+  /* line 107, desktop.scss */
   .filter {
     top: 4px;
     z-index: 2;
@@ -149,14 +133,14 @@ header {
     width: 79%;
   }
 }
-/* line 127, desktop.scss */
+/* line 118, desktop.scss */
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover {
   background-color: #97E272;
   color: #FFF;
 }
 
-/* line 134, desktop.scss */
+/* line 125, desktop.scss */
 .badge {
   line-height: 1.2;
   margin-left: 5px;
@@ -166,51 +150,51 @@ header {
 
 /* -----------END NAV STYLES -----*/
 /* ----------- CONTAINER ---------*/
-/* line 142, desktop.scss */
+/* line 133, desktop.scss */
 .swipezone {
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
-  width: 50px;
+  width: 15px;
 }
 
-/* line 151, desktop.scss */
+/* line 142, desktop.scss */
 .animate {
   width: 200px;
 }
 
-/* line 155, desktop.scss */
+/* line 146, desktop.scss */
 .container {
   margin-top: 45px;
 }
 
 @media screen and (max-width: 40em) {
-  /* line 159, desktop.scss */
+  /* line 150, desktop.scss */
   .container {
     z-index: 1;
   }
 }
 /* ------------ END CONTAINER ----*/
 /* --------- DOC STYLES  ---------*/
-/* line 166, desktop.scss */
+/* line 157, desktop.scss */
 .form-control {
   border: 0 none;
   border-radius: 0;
 }
 
-/* line 170, desktop.scss */
+/* line 161, desktop.scss */
 .navbar-form .form-group {
   display: block;
 }
 
 @media screen and (min-width: 40em) {
-  /* line 176, desktop.scss */
+  /* line 167, desktop.scss */
   .docs-container {
     margin-top: 50px;
   }
 }
-/* line 182, desktop.scss */
+/* line 173, desktop.scss */
 .doc {
   background: rgba(255, 255, 255, 0.5);
   color: #888;
@@ -221,16 +205,16 @@ header {
   line-height: 46px;
 }
 
-/* line 191, desktop.scss */
+/* line 182, desktop.scss */
 .doc-header {
   color: #666;
 }
 
-/* line 194, desktop.scss */
+/* line 185, desktop.scss */
 .doc-actions {
   margin: 0 5px;
 }
-/* line 196, desktop.scss */
+/* line 187, desktop.scss */
 .doc-actions .glyphicon:before {
   background: rgba(255, 255, 255, 0.6);
   border: 2px double #FFFFFF;
@@ -241,12 +225,12 @@ header {
 }
 
 @media screen and (max-width: 40em) {
-  /* line 208, desktop.scss */
+  /* line 199, desktop.scss */
   .doc .doc-header {
     display: block;
   }
 }
-/* line 214, desktop.scss */
+/* line 205, desktop.scss */
 .doc-actions span {
   display: inline-block;
   font-size: 26px;
@@ -254,7 +238,7 @@ header {
   width: 30px;
 }
 
-/* line 223, desktop.scss */
+/* line 214, desktop.scss */
 .doc-header {
   font-weight: bold;
   font-size: 18px;

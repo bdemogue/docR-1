@@ -26,7 +26,7 @@
               <li class="name" hm-tap="sidebar($event)">
                 <h1><a href="">doc<span class="brand-color">R</span></a></h1>
               </li>
-              <li class="toggle-topbar menu-icon"><a hm-tap="sidebar($event)" href=""></a></li>
+              <li class="toggle-topbar menu-icon"><a hm-tap="sidebar($event, 'tap')" href=""></a></li>
             </ul>
 
             <section class="top-bar-section">
@@ -41,10 +41,10 @@
           </nav>
         </header>
         
-        <sidebar class="sidebar" ng-show="isSidebar"></sidebar>
+        <sidebar class="sidebar"></sidebar>
         
         <div class="container" hm-tap="closeSidebar($event)">
-          <div class="swipezone" hm-swiperight="sidebar($event)"></div>
+          <div class="swipezone" hm-swiperight="sidebar($event, 'swipe')" hm-drag="sidebar($event, 'drag')"></div>
           <div ng-view id="page"></div>
         </div>
       </div>

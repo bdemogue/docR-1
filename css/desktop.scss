@@ -63,7 +63,8 @@ header{
 
 .sidebar{
   position: absolute;
-  top: 0; bottom: 0; left: 0px;
+  top: 0; bottom: 0; left: -200px;
+  display:none;
   width: 200px;
   background: #333;
   z-index: 2;
@@ -71,16 +72,6 @@ header{
   opacity:1;
   overflow: scroll-y;
   @include transition(.15s);
-
-  &.ng-hide-remove{
-    @include transform(translateX(-200px));
-    opacity:0;
-    
-  }
-  &.ng-hide-add, &.ng-hide-add-active{
-    @include transform(translateX(200px));
-   
-  }
 
   .side-nav{
     
@@ -144,7 +135,7 @@ header{
   top: 0;
   bottom: 0;
   left: 0;
-  width: 50px;
+  width: 15px;
 
 }
 
