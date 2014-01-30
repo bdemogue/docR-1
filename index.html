@@ -4,7 +4,7 @@
 
     <head>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0 user-scalable=no">
         <title>docR</title>
         <!--[if lt IE 9]>
           <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -26,7 +26,7 @@
               <li class="name" hm-tap="sidebar($event)">
                 <h1><a href="">doc<span class="brand-color">R</span></a></h1>
               </li>
-              <li class="toggle-topbar menu-icon"><a hm-tap="sidebar($event, 'tap')" href=""></a></li>
+              <li class="toggle-topbar menu-icon"><a hm-tap="sidebar($event)" href=""></a></li>
             </ul>
 
             <section class="top-bar-section">
@@ -44,7 +44,7 @@
         <sidebar class="sidebar"></sidebar>
         
         <div class="container" hm-tap="closeSidebar($event)">
-          <div class="swipezone" hm-swiperight="sidebar($event, 'swipe')" hm-drag="sidebar($event, 'drag')"></div>
+          <div class="swipezone" hm-drag="sidebar($event)"></div>
           <div ng-view id="page"></div>
         </div>
       </div>

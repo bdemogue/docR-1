@@ -94,7 +94,7 @@ header {
   z-index: 2;
   padding: 15px;
   opacity: 1;
-  overflow: scroll-y;
+  overflow-y: scroll;
   -webkit-transition: 0.15s;
   -moz-transition: 0.15s;
   -o-transition: 0.15s;

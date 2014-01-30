@@ -50,16 +50,16 @@ docRApp.controller('NavCtrl',['$scope','$location', function($scope, $location){
 		$scope.hmEvents.isSidebar = false;
 	}
 
-	$scope.sidebar = function(event, type){
-
-		$scope.hmEvents.type = type;
-		switch(type){
-			case 'tap':
-				$scope.hmEvents.isSidebar = !$scope.hmEvents.isSidebar;
-				break;
-			case 'drag':
-				$scope.hmEvents.event = event;
-				break; 
+	$scope.sidebar = function(event){
+		event.gesture.preventDefault();
+		$scope.hmEvents.type = event.type;
+		
+		if($scope.hmEvents.type == 'drag'){
+			$scope.hmEvents.event = event;
+			$scope.hmEvents.isSidebar = true;
+		}
+		else{
+			$scope.hmEvents.isSidebar = !$scope.hmEvents.isSidebar;
 		}
 
 		console.log($scope.hmEvents);
@@ -108,17 +108,40 @@ docRApp.directive('sidebar', ['$timeout', function($timeout){
 		restrict : 'E',
 		templateUrl :'partials/directives/sidebar.html',
 		link : function postLink(scope, element, attrs){
-			console.log(scope);
 			scope.$on('$viewContentLoaded', function() {
 
-				var body   = angular.element('body'),
+				var body     = angular.element('body'),
 					page     = angular.element('#page'),
 					btnLines = angular.element('.top-bar .toggle-topbar.menu-icon a'),
 					topBar   = angular.element('.top-bar'),
+					swipeZn  = angular.element('.swipezone'),
 					sideBar  = angular.element(element);
 
 				var popSidebar = function(){
-					sideBar.show().animate({left: '0px'}, 50);
+					console.log(scope.hmEvents.type);
+					switch(scope.hmEvents.type){
+						case 'tap':
+							sideBar.show().animate({left: '0px'}, 50);
+						break;
+
+						case 'drag':
+							scope.$watch('hmEvents.event', function(){
+								var deltaX = scope.hmEvents.event.gesture.deltaX;
+								var sideBarPosX = sideBar.position().left;
+								swipeZn.css({ width: '200px' });
+								console.log(sideBarPosX, deltaX);
+								sideBar.show();
+								if( deltaX >= sideBar.outerWidth() ){
+									sideBar.css({left: '0px'});
+									return true;
+								}
+								sideBar.css({left: deltaX-sideBar.outerWidth()+'px'});
+							})
+							
+							
+						break;
+					}
+					
 					body.css({ overflow:'hidden' });
 					page.css({ opacity : .3 });
 					btnLines.animate({ right:'10px'}, 50);

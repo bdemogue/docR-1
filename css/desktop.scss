@@ -70,7 +70,7 @@ header{
   z-index: 2;
   padding:15px;
   opacity:1;
-  overflow: scroll-y;
+  overflow-y: scroll;
   @include transition(.15s);
 
   .side-nav{
